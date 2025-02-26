@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Search, ShoppingCart, User, Sun, Moon } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import MaxgyetLogo from "../assets/logo.jpg"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,10 +32,10 @@ const Navbar = () => {
   // Navbar menu items with section links
   const menuItems = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/about-innovator" },
-    { name: "Products", link: "/products" },
-    { name: "Features", link: "/about-us" },
-    { name: "Contact", link: "/contact" },
+    { name: "Features", link: "#features" },
+    { name: "About", link: "#about-innovator" },
+    { name: "Product", link: "#products" },
+    { name: "Contact", link: "#contact" },
   ];
 
   // Handle navigation
@@ -56,8 +57,8 @@ const Navbar = () => {
     <motion.nav
       className={`p-4 flex justify-between items-center fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-amber-500 shadow-lg"
-          : "bg-amber-500 bg-opacity-90 backdrop-blur-sm"
+          ? "bg-[#fff] shadow-lg"
+          : "bg-[#fff] bg-opacity-90 backdrop-blur-sm"
       } ${darkMode ? "bg-gray-900 text-white" : ""}`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -84,12 +85,12 @@ const Navbar = () => {
               className={`cursor-pointer relative ${
                 activeItem === item.name
                   ? darkMode
-                    ? "text-amber-300"
-                    : "text-blue-600"
+                    ? "text-[#338a60]"
+                    : "text-[#32ba78]"
                   : darkMode
                   ? "text-gray-300"
                   : "text-gray-900"
-              } hover:${darkMode ? "text-amber-300" : "text-blue-600"}`}
+              } hover:${darkMode ? "text-[#5ceda7]" : "text-blue-600"}`}
               onClick={() => handleNavigation(item)}
               whileHover={{ scale: 1.1 }}
             >
@@ -97,7 +98,7 @@ const Navbar = () => {
               {activeItem === item.name && (
                 <motion.div
                   className={`absolute bottom-0 left-0 w-full h-0.5 ${
-                    darkMode ? "bg-amber-300" : "bg-blue-600"
+                    darkMode ? "bg-[#5ceda7]" : "bg-[#338a60]"
                   }`}
                 />
               )}
@@ -107,7 +108,7 @@ const Navbar = () => {
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <button
+          {/* <button
             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
             aria-label="Search"
           >
@@ -115,20 +116,32 @@ const Navbar = () => {
               size={20}
               className={darkMode ? "text-white" : "text-gray-800"}
             />
-          </button>
+          </button> */}
           <button
             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700 relative"
-            aria-label="Cart"
           >
             <ShoppingCart
               size={20}
+               className={darkMode ? "text-white" : "text-gray-800 "}
+            />
+            { <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+              0
+              
+            </span> }
+          </button>
+          <a
+            href="https://wa.me/+233556844397"  // Replace with your actual WhatsApp number
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1 rounded-full hover:bg-opacity-20 border-2 border-[#338a60] p-2 hover:bg-[#338a60] hover:text-white cursor-pointer"
+            aria-label="WhatsApp Contact"
+          >
+            <FaWhatsapp
+              size={20}
               className={darkMode ? "text-white" : "text-gray-800"}
             />
-            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-              0
-            </span>
-          </button>
-          <button
+          </a>
+          {/* <button
             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
             aria-label="Account"
           >
@@ -136,7 +149,7 @@ const Navbar = () => {
               size={20}
               className={darkMode ? "text-white" : "text-gray-800"}
             />
-          </button>
+          </button> */}
           <button
             className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
             onClick={toggleDarkMode}
@@ -155,7 +168,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <motion.button
           className={`md:hidden p-2 rounded-lg ${
-            darkMode ? "bg-amber-500 text-gray-900" : "bg-gray-800 text-white"
+            darkMode ? "bg-[#32ba78] text-gray-900" : "bg-gray-800 text-white"
           }`}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(!isOpen)}
@@ -171,7 +184,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             className={`absolute top-16 left-0 w-full ${
-              darkMode ? "bg-gray-800" : "bg-amber-300"
+              darkMode ? "bg-gray-800" : "bg-[#f7f7f7]"
             } p-4 shadow-lg md:hidden`}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -185,12 +198,12 @@ const Navbar = () => {
                   className={`cursor-pointer ${
                     activeItem === item.name
                       ? darkMode
-                        ? "text-amber-300"
+                        ? "text-[#5ceda7]"
                         : "text-blue-600"
                       : darkMode
                       ? "text-white"
                       : "text-gray-900"
-                  } hover:${darkMode ? "text-amber-300" : "text-blue-600"}`}
+                  } hover:${darkMode ? "text-[#5ceda7]" : "text-blue-600"}`}
                   onClick={() => handleNavigation(item)}
                   whileHover={{ x: 5 }}
                 >

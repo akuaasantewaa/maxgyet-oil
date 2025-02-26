@@ -123,7 +123,7 @@ const Footer = () => {
                   to="/product-catalog?category=technology"
                   className="hover:text-white"
                 >
-                  Clean Fuel Solution
+                  Clean Fuel Solutions
                 </Link>
               </li>
             </ul>

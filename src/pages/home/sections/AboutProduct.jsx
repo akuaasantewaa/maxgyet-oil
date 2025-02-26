@@ -16,37 +16,37 @@ const AboutProduct = () => {
   // Product features data
   const features = [
     {
-      icon: <Battery className="w-6 h-6 text-amber-500" />,
-      title: "♻️ Innovative Waste Conversion Technology",
+      icon: <Battery className="w-6 h-6 text-[#32ba78]" />,
+      title: " Innovative Waste Conversion Technology",
       description:
         "A highly efficient waste conversion transforms agricultural and plastic waste into sustainable fuel source.By utilizing an advanced pyrolysis or gasification process, the system extracts energy while minimizing material waste.",
     },
     {
-      icon: <Zap className="w-6 h-6 text-amber-500" />,
+      icon: <Zap className="w-6 h-6 text-[#32ba78]" />,
       title: "High Energy Efficiency",
       description:
         "The design maximize fuel output while minimizing raw material waste, ensuring optimal energy utilization.Aheat recovery mechanism is integrated to enhance efficiency within low-emission parameters,aligning with global environmental",
     },
     {
-      icon: <Settings className="w-6 h-6 text-amber-500" />,
-      title: "🔧 Modular & Scalable Design",
+      icon: <Settings className="w-6 h-6 text-[#32ba78]" />,
+      title: " Modular & Scalable Design",
       description:
         "Making it suitable for both small-scale and industrial applications.It can be easily expanded to increase production capacity, and its compact structure allows for deployment in various locations, including both urban and rural settings.",
     },
     {
-      icon: <Heart className="w-6 h-6 text-amber-500" />,
-      title: "🌍 Eco-Friendly & Sustainable Output",
+      icon: <Heart className="w-6 h-6 text-[#32ba78]" />,
+      title: "Eco-Friendly & Sustainable Output",
       description:
         " The resulting fuel is designed to be clean-burning, minimizing harmful emissions and supporting industrial and domestic energy needs in a responsible manner.",
     },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50" id='features'>
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16 pt-6">
-          {/* <p className="text-amber-600 font-medium mb-2">
+          {/* <p className="text-[#32ba78] font-medium mb-2">
             INNOVATION FROM TARKWA-NSUAEM
           </p> */}
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -70,7 +70,7 @@ const AboutProduct = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <span className="text-amber-500 font-semibold text-sm tracking-wider uppercase">
+            <span className="text-[#32ba78] font-semibold text-sm tracking-wider uppercase">
               A Sustainable Solution for a Cleaner Future
             </span>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mt-2 mb-4">
@@ -88,16 +88,18 @@ const AboutProduct = () => {
                 "Less polution, reduced waste and economic opportunities",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <div className="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
+                  <div className="w-5 h-5 bg-[#32ba78] rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                     <span className="text-white text-xs">{index + 1}</span>
                   </div>
                   <span className="text-gray-700">{item}</span>
                 </li>
               ))}
             </ul>
-            <button className="mt-8 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2">
+            <div className="flex">
+            <a href="#technical-features" className="mt-8 px-6 py-3 bg-[#32ba78] hover:bg-[#338a60] cursor-pointer text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2">
               Learn More <ArrowRight size={16} />
-            </button>
+            </a>
+            </div>
           </div>
         </div>
 
@@ -112,7 +114,7 @@ const AboutProduct = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#32ba78]">
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
                 Affordable and Accessible Energy
               </h4>
@@ -120,7 +122,7 @@ const AboutProduct = () => {
                Provides a low-cost fuel alternative for households and industries, making clean energy more accessible.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#32ba78]">
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
                 Energy Independence for Communities
               </h4>
@@ -128,7 +130,7 @@ const AboutProduct = () => {
                 Empowers local communities by redcucing reliance on expensive and imported fossil fuels.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#32ba78]">
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
                 Waste Reduction And Environmental Impact
               </h4>
@@ -136,7 +138,7 @@ const AboutProduct = () => {
                 Reduces landfill waste and pollution by converting organic and plastic waste into usable fuel.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#32ba78]">
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
                 Job Creation Opportunities
               </h4>
@@ -144,7 +146,7 @@ const AboutProduct = () => {
                 Creates employment in waste collection, fuel production, and distribution, boosting local economies.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#32ba78]">
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
                 Scalable and Sustainable Solution
               </h4>
@@ -152,7 +154,7 @@ const AboutProduct = () => {
                 Designed to expand with growing energy demands while maintaining enviromental sustainability.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
+            <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#32ba78]">
               <h4 className="text-xl font-semibold text-gray-800 mb-3">
                 Supports Circular Economy 
               </h4>
@@ -164,7 +166,7 @@ const AboutProduct = () => {
         </div>
 
         {/* Technical features */}
-        <div className="mb-20">
+        <div id= "technical-features" className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
               Technical Features
@@ -192,7 +194,7 @@ const AboutProduct = () => {
         {/* Testimonial */}
         <div className="mb-20 bg-white p-8 md:p-12 rounded-lg shadow-sm">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-amber-500 text-4xl mb-6">"</div>
+            <div className="text-[#32ba78] text-4xl mb-6">"</div>
             <p className="text-xl md:text-2xl text-gray-700 italic mb-6">
             "Before Maxgyet Oil Enterprise, getting fuel was a major challenge. I had to travel long distances just to refuel, which was both costly and time-consuming. Now, with Maxgyet Oil right in the Banda community, I can easily access quality diesel without the stress of long trips. It has saved me time and money, making my daily operations much smoother.
             </p>
@@ -211,7 +213,7 @@ const AboutProduct = () => {
         </div>
 
         {/* Availability and pricing */}
-        <div className="flex flex-col justify-center text-center md:flex-row items-center bg-amber-50 rounded-lg overflow-hidden mb-20">
+        <div className="flex flex-col justify-center text-center md:flex-row items-center bg-[#d7fcea] rounded-lg overflow-hidden mb-20">
           <div className="w-full md:w-2/3 p-8 md:p-12">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
               Availability & Support
@@ -221,11 +223,11 @@ const AboutProduct = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-amber-500" />
+                <Clock className="w-5 h-5 text-[#32ba78]" />
                 <span className="text-gray-700">Fast delivery available  📍Find supply points near you</span>
               </div>
             </div>
-            <button className="mt-4 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200">
+            <button className="mt-4 px-6 py-3 bg-[#32ba78] hover:bg-[#338a60] cursor-pointer text-white font-medium rounded-md transition-colors duration-200">
               Check Availability In Your Area
             </button>
           </div>
@@ -240,10 +242,10 @@ const AboutProduct = () => {
             Join the movement towards a cleaner and more sustainable future with Maxgyet innovative waste-to-fuel solution.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200">
+            <button className="px-8 py-3 bg-[#32ba78] hover:bg-[#338a60] cursor-pointer text-white font-medium rounded-full transition-colors duration-200">
               Request a Demonstration
             </button>
-            <button className="px-8 py-3 border border-gray-300 hover:border-amber-500 hover:text-amber-500 text-gray-700 font-medium rounded-md transition-colors duration-200">
+            <button className="px-8 py-3 border border-gray-300 hover:border-[#32ba78] hover:text-[#32ba78] text-gray-700 font-medium rounded-full transition-colors duration-200">
               Contact Us
             </button>
           </div>

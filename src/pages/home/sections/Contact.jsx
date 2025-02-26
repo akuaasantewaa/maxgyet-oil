@@ -232,7 +232,7 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 " id='contact'>
       <div className="container max-w-7xl mx-auto px-5 py-16 pt-20">
         <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
           Get in Touch with Maxgyet Oil

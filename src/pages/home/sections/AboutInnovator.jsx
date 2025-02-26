@@ -44,7 +44,7 @@ const AboutInnovator = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-amber-50 to-white">
+    <section id="about-innovator" className="py-20 bg-gradient-to-b from-[#d7fcea] to-white">
       <div className="container mx-auto px-6 pt-12">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Left column - Profile and quick info */}
@@ -62,12 +62,12 @@ const AboutInnovator = () => {
               <h1 className="text-3xl font-bold text-gray-800 mb-2">
                 {innovator.name}
               </h1>
-              <p className="text-xl text-amber-600 font-medium mb-4">
+              <p className="text-xl text-[#32ba78] font-medium mb-4">
                 {innovator.title}
               </p>
 
               <div className="flex items-start gap-2 text-gray-700 mb-4">
-                <MapPin className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-[#32ba78] mt-0.5 flex-shrink-0" />
                 <span>{innovator.location}</span>
               </div>
 
@@ -78,7 +78,7 @@ const AboutInnovator = () => {
                 <ul className="space-y-3">
                   {innovator.education.map((edu, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <HiOutlineAcademicCap className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
+                      <HiOutlineAcademicCap className="w-4 h-4 text-[#32ba78] mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-gray-800">
                           {edu.degree}
@@ -97,7 +97,7 @@ const AboutInnovator = () => {
                   <a
                     key={index}
                     href={link.url}
-                    className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-amber-50 border border-gray-200 rounded-md text-gray-700 hover:text-amber-600 transition-colors duration-200"
+                    className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-[#d7fcea] border border-gray-200 rounded-md text-gray-700 hover:text-[#32ba78] transition-colors duration-200"
                   >
                     {link.icon} {link.platform}
                   </a>
@@ -108,7 +108,7 @@ const AboutInnovator = () => {
 
           {/* Right column - Main content */}
           <div className="w-full lg:w-2/3">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6 border-b-2 border-amber-200 pb-2">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6 border-b-2 border-[#5ceda7] pb-2">
               About the Innovator
             </h2>
 
@@ -126,7 +126,7 @@ const AboutInnovator = () => {
               </h3>
               <p className="text-gray-700 mb-8">{innovator.vision}</p>
 
-              <blockquote className="p-6 bg-amber-50 border-l-4 border-amber-500 italic text-lg text-gray-700 mb-8">
+              <blockquote className="p-6 bg-[#d7fcea] border-l-4 border-[#32ba78] italic text-lg text-gray-700 mb-8">
                 ""My goal is not just to create fuel but to build a sustainable future where waste is transformed into opportunity. I strive to reduce environmental pollution, provide affordable energy solutions, and empower communities through innovative waste-to-fuel technology."
               </blockquote>
             </div>
@@ -141,7 +141,7 @@ const AboutInnovator = () => {
                     key={index}
                     className="flex items-start gap-3 p-4 bg-white rounded-lg shadow-sm border border-amber-100"
                   >
-                    <Award className="w-6 h-6 text-amber-500 flex-shrink-0" />
+                    <Award className="w-6 h-6 text-[#32ba78] flex-shrink-0" />
                     <span className="text-gray-700">{achievement}</span>
                   </div>
                 ))}
@@ -162,7 +162,7 @@ const AboutInnovator = () => {
                   </p>
                   <a
                     href="#"
-                    className="inline-flex items-center text-amber-500 hover:text-amber-600 font-medium"
+                    className="inline-flex items-center text-[#32ba78] hover:text-[#32ba78] font-medium"
                   >
                     Read more <ExternalLink className="w-4 h-4 ml-1" />
                   </a>
@@ -176,7 +176,7 @@ const AboutInnovator = () => {
                   </p>
                   <a
                     href="#"
-                    className="inline-flex items-center text-amber-500 hover:text-amber-600 font-medium"
+                    className="inline-flex items-center text-[#32ba78] hover:text-[#32ba78] font-medium"
                   >
                     Read more <ExternalLink className="w-4 h-4 ml-1" />
                   </a>
@@ -188,11 +188,11 @@ const AboutInnovator = () => {
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">
                 Connect with Maxwell
               </h3>
-              <div className="bg-amber-50 p-6 rounded-lg">
+              <div className="bg-[#d7fcea] p-6 rounded-lg">
                 <p className="text-gray-700 mb-4">
                   Interested in learning more about Maxwell's work or exploring partnership opportunities? Schedule a conversation or demonstration.
                 </p>
-                <button className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200">
+                <button className="px-6 py-3 bg-[#32ba78] hover:bg-[#338a60] cursor-pointer text-white font-medium rounded-md transition-colors duration-200">
                   Request a Meeting
                 </button>
               </div>

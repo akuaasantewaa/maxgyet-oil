@@ -34,7 +34,7 @@ const Hero = () => {
   }, [controls]);
 
   return (
-    <div className="w-full bg-gradient-to-br from-amber-50 to-white pt-20">
+    <div className="w-full bg-gradient-to-br from-[#d7fcea] to-white pt-20">
       <div className="container mx-auto px-6 py-16">
         <ScrollToTopButton />
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -47,29 +47,29 @@ const Hero = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Clean Energy from Waste{" "}
-              <span className="text-amber-500">Innovative. Sustainable. Impactful.</span>
+              <span className="text-[#32ba78]">Innovative. Sustainable. Impactful.</span>
             </h1>
             <p className="text-gray-600 text-lg mb-8 max-w-lg">
               Maxgyet Oil transform waste into affordable fuel, reducing pollution and creating a cleaner future for our community. Join us in making sustainable energy accessible to all.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <a
-                href="#services"
-                className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
+                href="#products"
+                className="px-6 py-3 bg-[#32ba78] hover:bg-[#338a60] text-white font-medium rounded-md transition-colors duration-200 flex items-center gap-2"
               >
-                Explore Services <ArrowRight size={16} />
+                Explore Products <ArrowRight size={16} />
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 border border-gray-300 hover:border-amber-500 hover:text-amber-500 text-gray-700 font-medium rounded-md transition-colors duration-200"
+                className="px-6 py-3 border border-gray-300 hover:border-[#32ba78] hover:text-[#32ba78] text-gray-700 font-medium rounded-md transition-colors duration-200"
               >
                 Contact Us
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <div className="text-amber-500">★★★★★</div>
-              <p className="text-gray-600 text-sm">
-                <span className="font-medium">
+  <div className="text-[#D4AF37]">★★★★★</div>
+  <p className="text-gray-600 text-sm">
+    <span className="font-medium">
                   Trusted by communities for greener
                 </span>{" "}
                 tomorrow
@@ -85,7 +85,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-amber-200 rounded-lg"></div>
+              <div className="absolute -z-10 w-4/5 h-4/5 top-8 right-0 bg-[#5ceda7] rounded-lg"></div>
               <img
                 src={Image}
                 alt="Fowohodie Services"

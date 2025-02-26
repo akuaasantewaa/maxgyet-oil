@@ -3,7 +3,7 @@ import ViewAllProductsButton from "./ViewAllProductsButton"; // Import the butto
 import Product1 from "../../../assets/biofuel.png";
 import Product2 from "../../../assets/image8.jpg";
 import Product3 from "../../../assets/image7.jpg";
-import Product4 from "../../../assets/image14.jpg";
+import Product4 from "../../../assets/image5.jpg";
 const Showcase = () => {
   // Sample data for products/services
   const showcaseItems = [
@@ -54,7 +54,7 @@ const Showcase = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-8 lg:px-12">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-6 sm:px-8 lg:px-12" id='products'>
       <div className="container mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
@@ -105,15 +105,17 @@ const Showcase = () => {
                   <span className="text-xl font-bold text-gray-900">
                     {item.price}
                   </span>
-                  <button
+                  <a
+                  href="https://paystack.shop/maxgyet-oil-enterprise"
+                  target="_blank"
                     className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                       item.price === "Free"
                         ? "bg-emerald-100 text-emerald-800 hover:bg-emerald-200 hover:shadow-md"
-                        : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-md"
+                        : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-md cursor-pointer"
                     }`}
                   >
-                    {item.price === "Free" ? "Get Started" : "Add to Cart"}
-                  </button>
+                    Shop Now
+                  </a>
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>

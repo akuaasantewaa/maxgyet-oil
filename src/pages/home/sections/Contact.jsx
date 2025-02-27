@@ -36,7 +36,7 @@ function Contact() {
     id="contact"
       className="min-h-screen bg-cover bg-center py-20"
       style={{
-        backgroundImage: `url('./src/assets/image11.jpg')`,
+        backgroundImage: `url('/image11.jpg')`,
         backgroundAttachment: "fixed",
       }}
     >

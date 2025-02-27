@@ -1,3 +1,7 @@
 *{
     scroll-behavior: smooth;
 }
+.my-container{
+width: 80%;
+margin: auto;
+}

@@ -2,26 +2,66 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Search, ShoppingCart, User, Sun, Moon } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import MaxgyetLogo from "../assets/logo.jpg"
+import MaxgyetLogo from "../assets/logo.jpg";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [activeItem, setActiveItem] = useState("Home");
 
-  // Handle scroll effect for navbar
+  // Define sections and their corresponding IDs
+  const menuItems = [
+    { name: "Home", link: "/", id: "home" },
+    { name: "Features", link: "#features", id: "features" },
+    { name: "About", link: "#about-innovator", id: "about-innovator" },
+    { name: "Product", link: "#products", id: "products" },
+    { name: "Contact", link: "#contact", id: "contact" },
+  ];
+
+  // Handle scroll effect for navbar and section detection
   useEffect(() => {
     const handleScroll = () => {
+      // Change navbar background on scroll
       if (window.scrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      // Determine active section based on scroll position
+      const scrollPosition = window.scrollY + 100; // Offset to trigger slightly before reaching section
+
+      // Special case for home section at the top
+      if (scrollPosition < 300) {
+        setActiveItem("Home");
+        return;
+      }
+
+      // Check each section
+      for (let i = menuItems.length - 1; i >= 0; i--) {
+        const section = document.getElementById(menuItems[i].id);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveItem(menuItems[i].name);
+            break;
+          }
+        }
+      }
     };
 
+    // Add event listener for scroll
     window.addEventListener("scroll", handleScroll);
+    
+    // Initial call to set correct active item on page load
+    handleScroll();
+    
+    // Cleanup event listener
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [menuItems]);
 
   // Toggle dark mode
   const toggleDarkMode = () => {
@@ -29,27 +69,28 @@ const Navbar = () => {
     // In a real app, you would apply dark mode classes to the document here
   };
 
-  // Navbar menu items with section links
-  const menuItems = [
-    { name: "Home", link: "/" },
-    { name: "Features", link: "#features" },
-    { name: "About", link: "#about-innovator" },
-    { name: "Product", link: "#products" },
-    { name: "Contact", link: "#contact" },
-  ];
-
   // Handle navigation
   const handleNavigation = (item) => {
     setActiveItem(item.name);
     if (isOpen) setIsOpen(false);
 
-    // Only prevent default and handle if you're using a single-page application
-    // window.location.href = item.link; // Use this for multi-page applications
+    // Handle homepage differently
+    if (item.link === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
 
-    // Smooth scroll to section if it's on the same page
-    const element = document.getElementById(item.link.substring(1));
+    // Smooth scroll to section
+    const element = document.getElementById(item.id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerOffset = 80; // Adjust based on your navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -86,20 +127,30 @@ const Navbar = () => {
                 activeItem === item.name
                   ? darkMode
                     ? "text-[#338a60]"
-                    : "text-[#32ba78]"
+                    : "text-[#32ba78] font-bold"
                   : darkMode
                   ? "text-gray-300"
                   : "text-gray-900"
-              } hover:${darkMode ? "text-[#5ceda7]" : "text-blue-600"}`}
+              } hover:${darkMode ? "text-[#5ceda7]" : "text-[#32ba78]"} transition-all duration-200`}
               onClick={() => handleNavigation(item)}
               whileHover={{ scale: 1.1 }}
             >
-              <a href={item.link}>{item.name}</a>
+              <a href={item.link} onClick={(e) => {
+                // Prevent default link behavior to handle navigation manually
+                e.preventDefault();
+                handleNavigation(item);
+              }}>
+                {item.name}
+              </a>
+              {/* Animated underline indicator */}
               {activeItem === item.name && (
                 <motion.div
-                  className={`absolute bottom-0 left-0 w-full h-0.5 ${
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 ${
                     darkMode ? "bg-[#5ceda7]" : "bg-[#338a60]"
                   }`}
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.2 }}
                 />
               )}
             </motion.li>
@@ -108,32 +159,11 @@ const Navbar = () => {
 
         {/* Desktop Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          {/* <button
-            className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-            aria-label="Search"
-          >
-            <Search
-              size={20}
-              className={darkMode ? "text-white" : "text-gray-800"}
-            />
-          </button> */}
-          <button
-            className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700 relative"
-          >
-            <ShoppingCart
-              size={20}
-               className={darkMode ? "text-white" : "text-gray-800 "}
-            />
-            { <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-              0
-              
-            </span> }
-          </button>
           <a
-            href="https://wa.me/+233556844397"  // Replace with your actual WhatsApp number
+            href="https://wa.me/+233556844397"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1 rounded-full hover:bg-opacity-20 border-2 border-[#338a60] p-2 hover:bg-[#338a60] hover:text-white cursor-pointer"
+            className="p-2 rounded-full hover:bg-[#338a60] border-2 border-[#338a60] hover:text-white transition-colors duration-300 flex items-center justify-center"
             aria-label="WhatsApp Contact"
           >
             <FaWhatsapp
@@ -141,17 +171,9 @@ const Navbar = () => {
               className={darkMode ? "text-white" : "text-gray-800"}
             />
           </a>
-          {/* <button
-            className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-            aria-label="Account"
-          >
-            <User
-              size={20}
-              className={darkMode ? "text-white" : "text-gray-800"}
-            />
-          </button> */}
+        
           <button
-            className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
             onClick={toggleDarkMode}
             aria-label={
               darkMode ? "Switch to light mode" : "Switch to dark mode"
@@ -195,55 +217,49 @@ const Navbar = () => {
               {menuItems.map((item) => (
                 <motion.li
                   key={item.name}
-                  className={`cursor-pointer ${
+                  className={`cursor-pointer relative ${
                     activeItem === item.name
                       ? darkMode
-                        ? "text-[#5ceda7]"
-                        : "text-blue-600"
+                        ? "text-[#5ceda7] font-bold"
+                        : "text-[#32ba78] font-bold"
                       : darkMode
                       ? "text-white"
                       : "text-gray-900"
-                  } hover:${darkMode ? "text-[#5ceda7]" : "text-blue-600"}`}
+                  } transition-all duration-200 border-l-4 ${
+                    activeItem === item.name 
+                      ? "border-[#32ba78] pl-3" 
+                      : "border-transparent pl-3"
+                  }`}
                   onClick={() => handleNavigation(item)}
                   whileHover={{ x: 5 }}
                 >
-                  <a href={item.link}>{item.name}</a>
+                  <a 
+                    href={item.link}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavigation(item);
+                    }}
+                  >
+                    {item.name}
+                  </a>
                 </motion.li>
               ))}
             </ul>
-            <div className="flex items-center space-x-4 mt-6 pt-4 border-t border-gray-700">
-              <button
-                className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-                aria-label="Search"
+            <div className="flex items-center space-x-4 mt-6 pt-4 border-t border-gray-300 dark:border-gray-700">
+              <a
+                href="https://wa.me/+233556844397"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full border border-[#338a60] flex items-center justify-center"
+                aria-label="WhatsApp Contact"
               >
-                <Search
+                <FaWhatsapp
                   size={20}
                   className={darkMode ? "text-white" : "text-gray-800"}
                 />
-              </button>
+              </a>
               <button
-                className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700 relative"
-                aria-label="Cart"
-              >
-                <ShoppingCart
-                  size={20}
-                  className={darkMode ? "text-white" : "text-gray-800"}
-                />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  3
-                </span>
-              </button>
-              <button
-                className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
-                aria-label="Account"
-              >
-                <User
-                  size={20}
-                  className={darkMode ? "text-white" : "text-gray-800"}
-                />
-              </button>
-              <button
-                className="p-1 rounded-full hover:bg-opacity-20 hover:bg-gray-700"
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
                 onClick={toggleDarkMode}
                 aria-label={
                   darkMode ? "Switch to light mode" : "Switch to dark mode"

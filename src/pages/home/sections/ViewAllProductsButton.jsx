@@ -11,12 +11,13 @@ const ViewAllProductsButton = ({ className = "" }) => {
 
   return (
     <Link
-      to={"/product-catalog"}
-      onClick={handleViewAllProducts}
-      className={`py-3 px-8 bg-white border border-gray-300 rounded-md text-gray-700 font-medium hover:bg-gray-50 hover:shadow-md transition-all duration-300 inline-flex items-center gap-2 ${className}`}
+      to="https://paystack.com"
+      target="_blank"
+     
+      className={`py-3 px-8 bg-white border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-50 hover:shadow-md transition-all duration-300 inline-flex items-center gap-2 ${className}`}
       aria-label="View all products"
     >
-      View All Products
+      Go to Shop
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"

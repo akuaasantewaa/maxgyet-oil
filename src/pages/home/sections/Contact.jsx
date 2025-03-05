@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import {
   Mail,
   MapPin,
@@ -8,7 +10,6 @@ import {
   User,
   Clock,
 } from "lucide-react";
-import bgImage from "../../../assets/image11.jpg";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ function Contact() {
 
   return (
     <div
-    id="contact"
+      id="contact"
       className="min-h-screen bg-cover bg-center py-20"
       style={{
         backgroundImage: `url('/image11.jpg')`,
@@ -209,15 +210,16 @@ function Contact() {
           </div>
         </div>
         <div className="mt-8 pt-6 border-gray-200">
-          <div className="h-auto bg-gray-100 rounded-lg overflow-hidden">
-            <div className="shadow-lg  rounded-lg">
+          <div className="max-w-4xl mx-auto h-auto bg-gray-100 rounded-lg overflow-hidden">
+            <div className="shadow-lg rounded-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.311387251482!2d-2.354192226013159!3d8.069688003269158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfd0197bd4be4fa1%3A0xd97fa41bf0dd4a5d!2sBanda%20sabiye!5e0!3m2!1sen!2sgh!4v1740658514442!5m2!1sen!2sgh"
                 width="100%"
-                height="450"
-                allowfullscreen=""
+                height="400"
+                allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="transition-all duration-300 hover:opacity-95"
               ></iframe>
             </div>
           </div>

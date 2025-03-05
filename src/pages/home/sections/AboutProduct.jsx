@@ -1,16 +1,6 @@
-import React from "react";
-import {
-  Battery,
-  Zap,
-  Award,
-  Heart,
-  Settings,
-  MapPin,
-  Clock,
-  ArrowRight,
-} from "lucide-react";
+import { Battery, Zap, Heart, Settings, ArrowRight } from "lucide-react";
 import About from "../../../assets/image10.jpg";
-import { FaLeaf, FaRecycle, FaUsers } from "react-icons/fa";
+import { FaRecycle, FaUsers } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
 const AboutProduct = () => {
   // Product features data
@@ -36,8 +26,7 @@ const AboutProduct = () => {
     {
       icon: <Heart className="w-6 h-6 text-[#32ba78]" />,
       title: "Eco-Friendly & Sustainable Output",
-      description:
-        "Produces clean-burning, low-emission energy.",
+      description: "Produces clean-burning, low-emission energy.",
     },
   ];
 
@@ -110,7 +99,22 @@ const AboutProduct = () => {
             </ul>
             <div className="flex justify-end">
               <a
-                href="#technical-features"
+                href="#core-technologies"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.getElementById("core-technologies");
+                  if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 className="mt-8 px-6 py-3 bg-[#32ba78] hover:bg-[#338a60] cursor-pointer text-white font-medium rounded-full transition-colors duration-200 flex items-center gap-2"
               >
                 Learn More <ArrowRight size={16} />
@@ -121,7 +125,7 @@ const AboutProduct = () => {
             <div className="relative">
               <div className="absolute -z-10 inset-0 bg-amber-100 rounded-lg transform translate-x-4 translate-y-4"></div>
               <img
-                src={About}
+                src={About || "/placeholder.svg"}
                 alt="Maxgyet Oil Enterprise"
                 className="w-full mx-auto h-auto rounded-lg shadow-md relative z-10"
               />
@@ -169,41 +173,38 @@ const AboutProduct = () => {
         </div>
 
         {/* Core Technologies Section */}
-<div id="core-technologies" className="py-20">
-  <div className="container mx-auto px-4 max-w-6xl">
-    <div className="text-center mb-16">
-      <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-        What Makes Us Unique
-      </h3>
-      <div className="w-20 h-1 bg-[#32ba78] mx-auto mb-6"></div>
-      <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
-        Advanced waste-to-energy innovations powering the Maxgyet Oil Enterprise ecosystem.
-      </p>
-    </div>
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center group"
-        >
-          <div className="mb-5 text-[#32ba78] transform group-hover:scale-110 transition-transform duration-300">
-            {feature.icon}
-          </div>
-          <h4 className="text-xl font-semibold text-gray-800 mb-3">
-            {feature.title}
-          </h4>
-          <div className="w-12 h-0.5 bg-gray-200 mb-3"></div>
-          <p className="text-gray-600 text-sm">
-            {feature.description}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+        <div id="core-technologies" className="py-20">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+                What Makes Us Unique
+              </h3>
+              <div className="w-20 h-1 bg-[#32ba78] mx-auto mb-6"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
+                Advanced waste-to-energy innovations powering the Maxgyet Oil
+                Enterprise ecosystem.
+              </p>
+            </div>
 
-       
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center group"
+                >
+                  <div className="mb-5 text-[#32ba78] transform group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
+                  <h4 className="text-xl font-semibold text-gray-800 mb-3">
+                    {feature.title}
+                  </h4>
+                  <div className="w-12 h-0.5 bg-gray-200 mb-3"></div>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

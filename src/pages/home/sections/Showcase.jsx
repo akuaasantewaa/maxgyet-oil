@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, Tag } from "lucide-react";
-import Product1 from "../../../assets/biofuel.png";
-import Product2 from "../../../assets/image8.jpg";
-import Product3 from "../../../assets/image7.jpg";
+import Product1 from "../../../assets/image2.jpg";
+import Product2 from "../../../assets/image1.jpg";
+import Product3 from "../../../assets/image3.jpg";
 import Product4 from "../../../assets/image5.jpg";
 
 const Showcase = () => {
@@ -13,7 +13,7 @@ const Showcase = () => {
       description:
         "A sustainable and affordable packaged biofuel alternative made from recycled waste materials, designed for cleaner energy solutions.",
       imageUrl: Product1,
-      price: "GH₵3500",
+      price: "GH₵10",
       badge: "Best Seller",
     },
     {
@@ -21,7 +21,7 @@ const Showcase = () => {
       description:
         "Hands-on-training sessions where young engineers and entrepreneurs are working with waste materials to create sustainable energy solutions.",
       imageUrl: Product2,
-      price: "GH₵1800",
+      price: "GH₵10",
       badge: "New",
     },
     {
@@ -29,7 +29,7 @@ const Showcase = () => {
       description:
         "A comprehensive system that optimizes biofuel usage, reducing emissions and enhancing energy efficiency in homes and industries.",
       imageUrl: Product3,
-      price: "GH₵5900",
+      price: "GH₵100",
       badge: "Premium",
     },
     // {

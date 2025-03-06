@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { MapPin, X } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -40,7 +42,7 @@ const AboutInnovator = () => {
         {/* Minimal Innovator Preview */}
         <div className="flex flex-col md:flex-row items-center gap-12 mb-12">
           {/* Brief Info */}
-          <div className="w-full md:w-3/5 lg:w-2/3">
+          <div className="w-full md:w-3/5 lg:w-2/3" data-aos="fade-right">
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -73,11 +75,15 @@ const AboutInnovator = () => {
             </div>
           </div>
           {/* Image */}
-          <div className="w-full md:w-2/5 lg:w-1/3">
+          <div
+            className="w-full md:w-2/5 lg:w-1/3"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <div className="relative">
               <div className="absolute inset-0 bg-[#32ba78] opacity-10 rounded-3xl transform translate-x-3 translate-y-3"></div>
               <img
-                src={CEO}
+                src={CEO || "/placeholder.svg"}
                 alt="Maxwell Gyetu"
                 className="w-full rounded-3xl relative z-10 shadow-md"
               />
@@ -105,9 +111,13 @@ const AboutInnovator = () => {
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Left sidebar in modal */}
-                <div className="md:col-span-1">
+                <div
+                  className="md:col-span-1"
+                  data-aos="fade-right"
+                  data-aos-duration="500"
+                >
                   <img
-                    src={CEO}
+                    src={CEO || "/placeholder.svg"}
                     alt={innovator.name}
                     className="w-full rounded-md shadow-md mb-6"
                   />
@@ -150,7 +160,11 @@ const AboutInnovator = () => {
                 </div>
 
                 {/* Main content in modal */}
-                <div className="md:col-span-2 space-y-6">
+                <div
+                  className="md:col-span-2 space-y-6"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                >
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-3">
                       The Journey

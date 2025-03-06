@@ -43,7 +43,10 @@ function Contact() {
     >
       <div className="container max-w-6xl mx-auto px-4">
         {/* Heading with subtle glass effect */}
-        <div className="backdrop-blur-sm bg-white/30 p-8 rounded-2xl mb-16 text-center max-w-3xl mx-auto">
+        <div
+          className="backdrop-blur-sm bg-white/30 p-8 rounded-2xl mb-16 text-center max-w-3xl mx-auto"
+          data-aos="fade-down"
+        >
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             Get in Touch
           </h1>
@@ -52,7 +55,11 @@ function Contact() {
 
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Contact Form - Takes 3 columns */}
-          <div className="lg:col-span-3 backdrop-blur-md bg-white/80 rounded-2xl shadow-xl overflow-hidden">
+          <div
+            className="lg:col-span-3 backdrop-blur-md bg-white/80 rounded-2xl shadow-xl overflow-hidden"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div className="p-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 Send a Message
@@ -151,7 +158,11 @@ function Contact() {
           </div>
 
           {/* Contact Information - Takes 2 columns */}
-          <div className="lg:col-span-2 backdrop-blur-md bg-white/80 rounded-2xl shadow-xl overflow-hidden">
+          <div
+            className="lg:col-span-2 backdrop-blur-md bg-white/80 rounded-2xl shadow-xl overflow-hidden"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <div className="p-8 h-full flex flex-col">
               <h2 className="text-2xl font-bold text-gray-800 mb-8">
                 Contact Information
@@ -209,7 +220,11 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-6 border-gray-200">
+        <div
+          className="mt-8 pt-6 border-gray-200"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
           <div className="max-w-4xl mx-auto h-auto bg-gray-100 rounded-lg overflow-hidden">
             <div className="shadow-lg rounded-lg">
               <iframe
@@ -226,13 +241,21 @@ function Contact() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16 backdrop-blur-md bg-white/80 rounded-2xl shadow-xl p-8">
+        <div
+          className="mt-16 backdrop-blur-md bg-white/80 rounded-2xl shadow-xl p-8"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">
             Frequently Asked Questions
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm">
+            <div
+              className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="450"
+            >
               <h3 className="text-lg font-medium text-gray-800 mb-2">
                 What is the eco-friendly fuel alternative?
               </h3>
@@ -243,7 +266,11 @@ function Contact() {
               </p>
             </div>
 
-            <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm">
+            <div
+              className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               <h3 className="text-lg font-medium text-gray-800 mb-2">
                 How does this fuel benefit users?
               </h3>
@@ -254,7 +281,11 @@ function Contact() {
               </p>
             </div>
 
-            <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm">
+            <div
+              className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="550"
+            >
               <h3 className="text-lg font-medium text-gray-800 mb-2">
                 Who can use this fuel?
               </h3>
@@ -265,7 +296,11 @@ function Contact() {
               </p>
             </div>
 
-            <div className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm">
+            <div
+              className="bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
               <h3 className="text-lg font-medium text-gray-800 mb-2">
                 How can I purchase the fuel?
               </h3>

@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+"use client";
+
+import { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
-import Image from "../../../assets/image8.jpg";
+import Image from "../../../assets/image28.jpg";
 
 const Hero = () => {
   const controls = useAnimationControls();
@@ -25,7 +27,7 @@ const Hero = () => {
         transition: {
           duration: 20,
           ease: "linear",
-          repeat: Infinity,
+          repeat: Number.POSITIVE_INFINITY,
         },
       });
     };
@@ -34,7 +36,10 @@ const Hero = () => {
   }, [controls]);
 
   return (
-    <div className="w-full bg-gradient-to-br from-[#d7fcea] to-white pt-20">
+    <div
+      className="w-full bg-gradient-to-br from-[#d7fcea] to-white pt-20"
+      id="home"
+    >
       <div className="container mx-auto px-6 py-16">
         <ScrollToTopButton />
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -44,11 +49,12 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            data-aos="fade-right"
           >
             <div className="relative">
               <div className="absolute -z-10 w-4/5 h-4/5 top-8 left-0 bg-[#5ceda7] rounded-lg"></div>
               <img
-                src={Image}
+                src={Image || "/placeholder.svg"}
                 alt="Fowohodie Services"
                 className="relative z-10 rounded-lg shadow-md w-full h-auto object-cover"
               />
@@ -60,6 +66,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            data-aos="fade-left"
+            data-aos-delay="200"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Clean Energy from Waste{" "}

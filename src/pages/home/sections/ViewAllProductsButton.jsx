@@ -11,7 +11,7 @@ const ViewAllProductsButton = ({ className = "" }) => {
 
   return (
     <Link
-      to="https://paystack.com"
+      to="https://paystack.shop/maxgyet-oil"
       target="_blank"
      
       className={`py-3 px-8 bg-white border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-50 hover:shadow-md transition-all duration-300 inline-flex items-center gap-2 ${className}`}
@@ -19,7 +19,7 @@ const ViewAllProductsButton = ({ className = "" }) => {
     >
       Go to Shop
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="https://paystack.shop/maxgyet-oil"
         className="h-5 w-5"
         viewBox="0 0 20 20"
         fill="currentColor"

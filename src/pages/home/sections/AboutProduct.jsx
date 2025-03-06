@@ -55,10 +55,7 @@ const AboutProduct = () => {
     <section className="py-20 bg-gray-50 my-container" id="features">
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16 pt-6">
-          {/* <p className="text-[#32ba78] font-medium mb-2">
-            INNOVATION FROM TARKWA-NSUAEM
-          </p> */}
+        <div className="text-center mb-16 pt-6" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             The Maxgyet Oil Enterprise
           </h2>
@@ -70,7 +67,7 @@ const AboutProduct = () => {
 
         {/* Main product showcase */}
         <div className="flex flex-col lg:flex-row items-center gap-12 justify-center mb-20">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2" data-aos="fade-right">
             <span className="text-[#32ba78] font-semibold text-sm tracking-wider uppercase">
               A Sustainable Solution for a Cleaner Future
             </span>
@@ -121,7 +118,11 @@ const AboutProduct = () => {
               </a>
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
+          <div
+            className="w-full lg:w-1/2"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <div className="relative">
               <div className="absolute -z-10 inset-0 bg-amber-100 rounded-lg transform translate-x-4 translate-y-4"></div>
               <img
@@ -136,7 +137,7 @@ const AboutProduct = () => {
         {/* Benefits section */}
         <div className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 Benefits of Maxgyet Oil
               </h3>
@@ -155,6 +156,8 @@ const AboutProduct = () => {
                   <div
                     key={index}
                     className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
                   >
                     <div className="bg-[#32ba78] bg-opacity-10 p-6 flex justify-center">
                       <Icon className="text-5xl text-white" />
@@ -175,7 +178,7 @@ const AboutProduct = () => {
         {/* Core Technologies Section */}
         <div id="core-technologies" className="py-20">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
                 What Makes Us Unique
               </h3>
@@ -191,6 +194,8 @@ const AboutProduct = () => {
                 <div
                   key={index}
                   className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center group"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 50}
                 >
                   <div className="mb-5 text-[#32ba78] transform group-hover:scale-110 transition-transform duration-300">
                     {feature.icon}

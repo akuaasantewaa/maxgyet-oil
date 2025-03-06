@@ -66,7 +66,7 @@ const Navbar = () => {
 
     // Cleanup event listener
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuItems]);
+  }, []);
 
   // Toggle dark mode
   const toggleDarkMode = () => {
@@ -79,25 +79,32 @@ const Navbar = () => {
     setActiveItem(item.name);
     if (isOpen) setIsOpen(false);
 
-    // Handle homepage differently
-    if (item.link === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
+    // Use setTimeout to ensure the mobile menu closes before scrolling
+    setTimeout(() => {
+      // Handle homepage differently
+      if (item.name === "Home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
 
-    // Smooth scroll to section
-    const element = document.getElementById(item.id);
-    if (element) {
-      const headerOffset = 80; // Adjust based on your navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      // Smooth scroll to section
+      const element = document.getElementById(item.id);
+      if (element) {
+        // Get the navbar height for proper offset
+        const navbar = document.querySelector("nav");
+        const navbarHeight = navbar ? navbar.offsetHeight : 80;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
+        // Calculate position accounting for navbar height
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 100); // Small delay to ensure menu closes first
   };
 
   return (
@@ -183,7 +190,7 @@ const Navbar = () => {
             />
           </a>
           <a
-            href="https://facebook.com/maxgyetoil"
+            href="https://web.facebook.com/profile.php?id=61573446217701"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full hover:bg-[#338a60] border-2 border-[#338a60] hover:text-white transition-colors duration-300 flex items-center justify-center"
@@ -198,7 +205,7 @@ const Navbar = () => {
             </svg>
           </a>
           <a
-            href="https://instagram.com/maxgyetoil"
+            href="https://www.instagram.com/maxgyet_oil_enterprise/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full hover:bg-[#338a60] border-2 border-[#338a60] hover:text-white transition-colors duration-300 flex items-center justify-center"

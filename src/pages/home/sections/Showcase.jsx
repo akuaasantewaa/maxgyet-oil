@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, Tag } from "lucide-react";
-import Product1 from "../../../assets/image2.jpg";
-import Product2 from "../../../assets/image1.jpg";
-import Product3 from "../../../assets/image3.jpg";
-import Product4 from "../../../assets/image5.jpg";
+import Product1 from "../../../assets/image19.jpg";
+import Product2 from "../../../assets/image24.jpg";
+import Product3 from "../../../assets/image27.jpg";
+import Product4 from "../../../assets/image4.jpg";
+import Product5 from "../../../assets/image14.jpg";
+import Product6 from "../../../assets/image13.jpg";
+import Product7 from "../../../assets/image6.jpg";
+import Product8 from "../../../assets/image30.jpg";
+import Product9 from "../../../assets/image15.jpg";
 
 const Showcase = () => {
   // Sample data for products/services
@@ -17,29 +22,69 @@ const Showcase = () => {
       badge: "Best Seller",
     },
     {
+      title: "Eco-Power Blend Pack",
+      description:
+        "A responsible and efficient fuel alternative, harnessing waste materials for a more sustainable energy future.",
+      imageUrl: Product2,
+      price: "GH₵10",
+      badge: "EcoFuel",
+    },
+    {
+      title: "MaxEco Fuel Pack",
+      description:
+        "MaxEco Petrol is a high-performance fuel designed to power engines with efficiency and reliability. Our petrol is refined to ensure clean combustion, reducing engine wear and improving fuel economy. Perfect for vehicles, generators, and small machinery, this eco-conscious blend meets industry standards for reduced emissions while delivering maximum power.",
+      imageUrl: Product3,
+      price: "GH₵20",
+      badge: "Classic",
+    },
+    {
+      title: "Maxgyet Energy",
+      description:
+        "Maxgyet Energy Diesel is a premium-grade fuel engineered for durability and power. It provides superior combustion efficiency, ensuring smooth operation for diesel-powered vehicles, trucks, and industrial machines. With its advanced formulation, this diesel minimizes carbon buildup, improves mileage, and supports cleaner energy solutions.",
+      imageUrl: Product4,
+      price: "GH₵20",
+      badge: "Superior",
+    },
+    {
+      title: "Fuel Upcycle Pack",
+      description:
+        "Maxgyet Oil’s Petrol is refined for maximum efficiency, ensuring smooth engine operation and optimal fuel economy. Designed for cars, motorcycles, and power generators, our Petrol provides high octane ratings, ensuring cleaner combustion and enhanced performance. Whether for everyday commuting or business operations, trust Maxgyet Oil for quality fuel you can rely on.",
+      imageUrl: Product5,
+      price: "GH₵50",
+      badge: "MaxPower",
+    },
+    {
+      title: "Regen Fuel",
+      description:
+        "Maxgyet Oil’s premium Diesel fuel is formulated to deliver high performance and efficiency for vehicles, generators, and industrial machinery. Our Diesel is low in sulfur, ensuring cleaner combustion, reduced emissions, and enhanced engine longevity. Whether for transportation, power generation, or industrial use, Maxgyet Diesel guarantees reliable energy at an affordable price.",
+      imageUrl: Product6,
+      price: "GH₵50",
+      badge: "Elite",
+    },
+    {
       title: "Waste-to-Energy Workshops",
       description:
         "Hands-on-training sessions where young engineers and entrepreneurs are working with waste materials to create sustainable energy solutions.",
-      imageUrl: Product2,
-      price: "GH₵10",
+      imageUrl: Product7,
+      price: "GH₵200",
       badge: "New",
     },
     {
-      title: "Biofuel Efficiency System",
+      title: "Maxgyet Multi-Litre Fuel",
       description:
-        "A comprehensive system that optimizes biofuel usage, reducing emissions and enhancing energy efficiency in homes and industries.",
-      imageUrl: Product3,
-      price: "GH₵100",
+        "The Maxgyet Fuel Pack ensures you get the right amount of high quality fuel whether petrol or diesel available in all sizes to meet your needs. Designed for convenience and efficiency, our fuel is sustainably sourced to provide a cleaner and more reliable energy solution. Power your journey with Maxgyet’s commitment to affordability, sustainability, and quality.",
+      imageUrl: Product8,
+      price: "Price Varies",
       badge: "Premium",
     },
-    // {
-    //   title: "Sustainable Community Programs",
-    //   description:
-    //     "Join a network of eco-conscious individuals collaborating on environmental projects, symbolizing sustainability and clean energy effort.",
-    //   imageUrl: Product4,
-    //   price: "Free",
-    //   badge: "Community",
-    // },
+    {
+      title: "Sustainable Community Programs",
+      description:
+        "Join a network of eco-conscious individuals collaborating on environmental projects, symbolizing sustainability and clean energy effort.",
+      imageUrl: Product9,
+      price: "Free",
+      badge: "Community",
+    },
   ];
 
   // Animation trigger state
@@ -82,7 +127,7 @@ const Showcase = () => {
                 ))}
               </div>
               <a
-                href="https://paystack.shop/maxgyet-oil-enterprise"
+                href="https://paystack.shop/maxgyet-oil"
                 target="_blank"
                 className="flex items-center text-gray-800 hover:text-[#32ba78] font-medium group transition-colors"
               >
@@ -138,7 +183,7 @@ const Showcase = () => {
                     {item.price}
                   </span>
                   <a
-                    href="https://paystack.shop/maxgyet-oil-enterprise"
+                    href="https://paystack.shop/maxgyet-oil"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 bg-white border border-[#32ba78] text-gray-800 hover:bg-[#32ba78] hover:text-white rounded-full text-sm font-medium transition-colors duration-300"

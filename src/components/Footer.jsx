@@ -13,7 +13,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://web.facebook.com/profile.php?id%3D61573446217701&sa=D&source=editors&ust=1740998709522313&usg=AOvVaw22hFfd8My3pT3BOOzC4uCj"
+                href="https://web.facebook.com/profile.php?id=61573446217701"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -33,7 +33,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/maxgyet_oil_enterprise/&sa=D&source=editors&ust=1740998709522364&usg=AOvVaw2LfVYbEGfZ9C1Ftu-_Hwy8"
+                href="https://www.instagram.com/maxgyet_oil_enterprise/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -53,7 +53,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/company/maxgyetoil"
+                href="https://www.linkedin.com/in/maxgyet-oil-enterprise-6a0600354/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -69,7 +69,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.tiktok.com/@maxgyetoilenterprise&sa=D&source=editors&ust=1740998709522413&usg=AOvVaw1_L2KwjZGIPmH_8W69Ddwp"
+                href="https://www.tiktok.com/@maxgyetoilenterprise"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300"

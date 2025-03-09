@@ -181,14 +181,12 @@ const Navbar = () => {
             href="https://wa.me/+233556844397"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-[#338a60] border-2 border-[#338a60] hover:text-white transition-colors duration-300 flex items-center justify-center"
+            className="p-2 rounded-full border-2 border-[#338a60] text-[#338a60] hover:bg-[#338a60] hover:text-white transition-colors duration-300 flex items-center justify-center"
             aria-label="WhatsApp Contact"
           >
-            <FaWhatsapp
-              size={20}
-              className={darkMode ? "text-white" : "text-gray-800"}
-            />
+            <FaWhatsapp size={20} />
           </a>
+
           <a
             href="https://web.facebook.com/profile.php?id=61573446217701"
             target="_blank"

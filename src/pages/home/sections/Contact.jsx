@@ -10,6 +10,7 @@ import {
   User,
   Clock,
 } from "lucide-react";
+import Swal from 'sweetalert2'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ function Contact() {
     message: "",
     phone: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,9 +29,52 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted", formData);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://formspree.io/f/xdkenrya", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Your message has been sent successfully. We will get back to you soon.",
+          confirmButtonColor: "#CD7F32",
+        });
+
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to send message. Please try again later.",
+          confirmButtonColor: "#CD7F32",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "An error occurred. Please check your internet connection and try again.",
+        confirmButtonColor: "#CD7F32",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -149,9 +194,16 @@ function Contact() {
                 <button
                   type="submit"
                   className="w-full bg-[#32ba78] shadow-lg cursor-pointer hover:shadow-2xl text-white py-3 rounded-full transition-colors flex items-center justify-center"
+                  disabled={isSubmitting}
                 >
-                  <Send className="mr-2" size={18} />
-                  Send Message
+                  {isSubmitting ? (
+                    <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  ) : (
+                    <>
+                      <Send className="mr-2" size={18} />
+                      "Send Message"
+                    </>
+                  )}
                 </button>
               </form>
             </div>
